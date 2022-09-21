@@ -1,0 +1,27 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fund My Project!</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <header class="container">
+      <nav>
+        {{#if logged_in}}
+          <a href="/dashboard" id="dashboard">dashboard</a>
+          <a href="/" id="homepage">homepage</a>
+          |
+          <button class="no-button" id="logout">logout</button>
+        {{else}}
+          <a href="/login">login</a>
+        {{/if}}
+      </nav>
+    </header>
+    {{{body}}}
+  </body>
+
+</html>
