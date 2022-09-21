@@ -27,10 +27,6 @@ Comment.init(
         key: "id",
       },
     },
-    title: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
     commentary: {
       type: DataTypes.TEXT,
       allowNull: false,
