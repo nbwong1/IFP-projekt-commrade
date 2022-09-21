@@ -32,7 +32,10 @@ Post.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    location: {},
+    location: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
   },
   {
     sequelize,
