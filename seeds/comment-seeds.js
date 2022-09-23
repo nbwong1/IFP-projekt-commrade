@@ -1,4 +1,4 @@
-const { Comment } = require("../../../challengesRepos/Tech_Blog/models");
+const { Comment } = require("../models");
 
 const commentData = [
   {
