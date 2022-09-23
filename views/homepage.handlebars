@@ -1,5 +1,13 @@
-<div>
-  <ul>
-    <li></li>
+<div class="post-body">
+  <ul class="post-list">
+    {{#each post}}
+
+      <li class="post-list-item">
+        <div><h2>{{title}}</h2></div>
+        <div>{{content}}</div>
+        <div>{{format_date date_created}}</div>
+        <div><p>{{location}}</p></div>
+      </li>
+    {{/each}}
   </ul>
 </div>
