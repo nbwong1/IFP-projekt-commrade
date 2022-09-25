@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Post, Expiration } = require("../../models");
 const withAuth = require('../../utils/auth');
 
-// post route for posts (maybe we should name this something else so there's no confusion)
+// post route for posts (maybe we should name this something else so there's no confusion, it might make it easier)
 router.post('/', async (req, res) => {
     try {
         const newPost = await Post.create({
