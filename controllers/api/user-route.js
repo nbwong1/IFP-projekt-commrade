@@ -1,6 +1,74 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Post, Comment } = require("../../models");
 
+// done
+router.get("/", async (req, res) => {
+  console.log("check");
+
+  try {
+    const allUserData = await User.findAll({
+      // be sure to include its associated Products
+      attributes: { exclude: ["password"] },
+    });
+
+    return res.status(200).json(allUserData);
+  } catch (err) {
+    res.status(500).json(err);
+    console.log(err);
+  }
+});
+
+// done
+router.get("/:id", async (req, res) => {
+  console.log("check");
+  try {
+    const singleUserData = await User.findOne({
+      attributes: { exclude: ["password"] },
+      where: { id: req.params.id },
+      include: [
+        {
+          model: Post,
+          attributes: ["id", "title", "content", "date_created"],
+        },
+        {
+          model: Comment,
+          attributes: ["id", "commentary", "date_created"],
+          include: {
+            model: Post,
+            attributes: ["title"],
+          },
+        },
+      ],
+    });
+    if (!singleUserData) {
+      res.status(404).json({ message: "No user found with this id!" });
+      return;
+    }
+
+    res.status(200).json(singleUserData);
+  } catch (err) {
+    res.status(500).json(err);
+    console.log(err);
+  }
+});
+
+// done
+router.post("/", async (req, res) => {
+  try {
+    const userData = await User.create(req.body);
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+// done
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -31,4 +99,16 @@ router.post("/login", async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+// we need to set up logout
+router.post("/logout", (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
 module.exports = router;
