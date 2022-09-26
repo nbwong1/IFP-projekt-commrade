@@ -1,41 +1,53 @@
 const router = require("express").Router();
 const { Post, Expiration } = require("../../models");
-const withAuth = require('../../utils/auth');
+const withAuth = require("../../utils/auth");
 
 // post route for posts (maybe we should name this something else so there's no confusion, it might make it easier)
-router.post('/', async (req, res) => {
-    try {
-        const newPost = await Post.create({
-            ...req.body,
-            user_id: req.session.user_id,
-        });
+router.post("/", async (req, res) => {
+  Post.create({
+    title: req.body.title,
+    user_id: req.body.user_id,
+    content: req.body.content,
+    location: req.body.location,
+  }).then((newPost) => {
+    res.json(newPost);
+  }).catch ((err) => {
+      res.json(err);
+    });
+});
 
-        res.status(200).json(newPost);
-    } catch(err) {
-        res.status(400).json(err);
+// update route for posts
+router.put("/:id", async (req, res) => {
+  Post.update(
+    {
+      title: req.body.title,
+      content: req.body.content,
+      location: req.body.location,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
     }
+  )
+    .then((updatedPost) => {
+      res.json(updatedPost);
+    })
+    .catch((err) => res.json(err));
 });
 
 // delete routes for posts
-router.delete('/:id', async (req, res) => {
-    try {
-        const postData = await Post.destroy({
-            where: {
-                id: req.params.id,
-                user_id: req.session.user_id,
-            },
-        });
-
-        if (!postData) {
-            res.status(404).json({ message: 'No post found with this id!'});
-            return;
-        }
-        res.status(200).json(postData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
+router.delete("/:id", async (req, res) => {
+  Post.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((deletedPost) => {
+      res.json(deletedPost);
+    })
+    .catch((err) => res.json(err));
 });
-
 // delete based on Date of event
 
 module.exports = router;
