@@ -5,32 +5,30 @@ const { Post, Expiration } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // get all posts `/posts` for a single user (this might be confusing if we use IDs based on the user, maybe moved `/api/users/posts?)
-router.get('/:user_id/posts', async (req, res) => {
-    Post.findAll(
-        {
-            where: {
-                user_id: req.params.user_id
-            },
-        }
-    ).then((postData) => {
-        res.json(postData);
-    })
+router.get("/:user_id/posts", async (req, res) => {
+  Post.findAll({
+    where: {
+      user_id: req.params.user_id,
+    },
+  }).then((postData) => {
+    res.json(postData);
+  });
 });
 
-
 // post route for posts (maybe we should name this something else so there's no confusion, it might make it easier)
-router.post("/", async (req, res) => {
-  Post.create(
-    {
-        title: req.body.title,
+router.post("/", withAuth, async (req, res) => {
+  Post.create({
+    title: req.body.title,
     // how to pull in the user_id based on session
-        user_id: req.body.user_id,
-        content: req.body.content,
-        location: req.body.location,
-  }).then((newPost) => {
-    res.json(newPost);
-  }).catch ((err) => {
-      res.json(err);
+    user_id: req.session.user_id,
+    content: req.body.content,
+    location: req.body.location,
+  })
+    .then((newPost) => {
+      res.json(newPost);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
     });
 });
 
