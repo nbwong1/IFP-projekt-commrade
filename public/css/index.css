@@ -16,6 +16,7 @@
   margin: 0%;
   background: var(--black);
   padding: 0.3em 0em 0.3em 0em;
+  box-shadow: 10px 5px 5px red;
 
   display: flex;
   align-items: center;
