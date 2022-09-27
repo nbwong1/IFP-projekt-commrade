@@ -1,4 +1,7 @@
+// uses `/api/posts`
+
 const router = require("express").Router();
+
 const { Post, Expiration, User } = require("../../models");
 const withAuth = require('../../utils/auth');
 
@@ -36,11 +39,27 @@ router.post('/', async (req, res) => {
             location: req.body.location,
         });
 
-        res.status(200).json(newPost);
-    } catch(err) {
-        res.status(400).json(err);
+
+// update route for posts
+router.put("/:id", async (req, res) => {
+  Post.update(
+    {
+      title: req.body.title,
+      content: req.body.content,
+      location: req.body.location,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
     }
+  )
+    .then((updatedPost) => {
+      res.json(updatedPost);
+    })
+    .catch((err) => res.json(err));
 });
+
 
 //update routes for post
 router.put('/:id', async (req, res) => {
@@ -74,8 +93,8 @@ router.delete('/:id', async (req, res) => {
         res.json(deletedPost);
     })
     .catch((err) => res.status(500).json(err));
-});
 
+});
 // delete based on Date of event
 
 module.exports = router;

@@ -1,4 +1,5 @@
 const router = require("express").Router();
+
 const { Utils } = require("sequelize");
 const { Post, Comment, User } = require("../../models");
 const withAuth = require('../../utils/auth');
@@ -20,13 +21,11 @@ router.post('/:post_id', async (req, res) => {
             user_id: req.body.user_id,
             post_id: req.body.post_id,
             commentary: req.body.commentary,
-        });
 
-        res.status(200).json(newComment);
-    } catch(err) {
-        res.status(400).json(err);
-    }
+        });
+    };
 });
+
 
 //update route for comments
 router.put('/:id', async (req, res) => {
@@ -34,6 +33,7 @@ router.put('/:id', async (req, res) => {
         {
             user_id: req.body.user_id,
             post_id: req.body.post_id,
+
             commentary: req.body.commentary,
         },
         {
@@ -50,6 +50,7 @@ router.put('/:id', async (req, res) => {
 
 // delete comment route
 router.delete('/:id', async (req, res) => {
+
     Comment.destroy({
         where: {
             id: req.params.id,
@@ -58,7 +59,9 @@ router.delete('/:id', async (req, res) => {
     .then((deletedComment) => {
         res.json(deletedComment);
     })
+
     .catch((err) => res.status(500).json (err));
+
 });
 
 module.exports = router;
