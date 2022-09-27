@@ -1,13 +1,39 @@
 const router = require("express").Router();
-const { Post, Expiration } = require("../../models");
+const { Post, Expiration, User } = require("../../models");
 const withAuth = require('../../utils/auth');
 
-// post route for posts (maybe we should name this something else so there's no confusion, it might make it easier)
+//get route for posts, gets all posts
+router.get('/', async (req, res) => {
+    try {
+        const postData = await Post.findAll();
+        res.status(200).json(postData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+//get route for posts, gets based on one user
+router.get('/:user_id', (req, res) => {
+    Post.findAll(
+        {
+            where: {
+                user_id: req.params.user_id
+            },
+        },
+    ).then((postData) => {
+        res.json(postData);
+    });
+});
+
+
+// post route for posts 
 router.post('/', async (req, res) => {
     try {
         const newPost = await Post.create({
-            ...req.body,
-            user_id: req.session.user_id,
+            user_id: req.body.user_id,
+            title: req.body.title,
+            content: req.body.content,
+            location: req.body.location,
         });
 
         res.status(200).json(newPost);
@@ -16,24 +42,38 @@ router.post('/', async (req, res) => {
     }
 });
 
-// delete routes for posts
-router.delete('/:id', async (req, res) => {
-    try {
-        const postData = await Post.destroy({
+//update routes for post
+router.put('/:id', async (req, res) => {
+    Post.update(
+        {
+            user_id: req.body.user_id,
+            title: req.body.title,
+            content: req.body.content,
+            location: req.body.location,
+        },
+        {
             where: {
                 id: req.params.id,
-                user_id: req.session.user_id,
             },
-        });
-
-        if (!postData) {
-            res.status(404).json({ message: 'No post found with this id!'});
-            return;
         }
-        res.status(200).json(postData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
+    )
+    .then((updatedPost) => {
+        res.json(updatedPost);
+    })
+    .catch((err) => res.json(err));
+});
+
+// delete routes for posts
+router.delete('/:id', async (req, res) => {
+    Post.destroy({
+        where: {
+            id: req.params.id,
+        },
+    })
+    .then((deletedPost) => {
+        res.json(deletedPost);
+    })
+    .catch((err) => res.status(500).json(err));
 });
 
 // delete based on Date of event
