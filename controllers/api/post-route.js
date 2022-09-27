@@ -1,5 +1,3 @@
-// uses `/api/posts`
-
 const router = require("express").Router();
 
 const { Post, Expiration, User } = require("../../models");
