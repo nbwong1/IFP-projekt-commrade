@@ -16,7 +16,7 @@
   margin: 0%;
   background: var(--black);
   padding: 0.3em 0em 0.3em 0em;
-  box-shadow: 10px 5px 5px red;
+  box-shadow: 0px 5px 5px red;
 
   display: flex;
   align-items: center;
@@ -78,7 +78,7 @@ a:hover::after {
   color: var(--white);
 }
 
-[data-background="background"] {
+[data-backgroundL="backgroundL"] {
   background-image: url("https://studioaccessballroom.com/wp-content/uploads/2019/08/46513257_577258236077850_153409437174857728_o-Copy.jpg");
   background-repeat: no-repeat;
   width: 100%;
@@ -105,9 +105,11 @@ a:hover::after {
 input {
   font-size: 22px;
   text-align: center;
-  padding: 5px;
+  padding: 3px;
   outline: none;
-  border-radius: 20px;
+  border-radius: 15px;
+  border-color: var(--red);
+  border-width: 3px;
 }
 
 .loginBtn {
@@ -118,7 +120,9 @@ input {
   padding-right: 1em;
   padding-top: 5%;
   padding-bottom: 5%;
-  border-radius: 20px;
+  border-radius: 15px;
+  border-color: var(--red);
+  border-width: 3px;
 }
 /*  */
 /*  */
