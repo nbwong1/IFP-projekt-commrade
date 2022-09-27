@@ -50,18 +50,16 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
-router.detele('/:id', withAuth, (req, res) => {
+router.delete("/:id", async (req, res) => {
     Comment.destroy({
-        if(!commentData) {
-            res.status(404).json({ message: 'No comment found with this id!'});
-            return;
-        }
-        res.json(commentData);
+        where: {
+            id: req.params.id,
+        },
     })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    .then((deletedComment) => {
+        res.json(deletedComment);
+    })
+    .catch((err) => res.json(err));
 });
 
 module.exports = router;
