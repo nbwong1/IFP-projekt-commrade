@@ -1,22 +1,23 @@
 {{! took this login form from class }}
-<div class="row">
-  <div class="col-md-6">
-    {{!-- <h2>Login</h2> --}}
 
-    <form class="form login-form">
+<body class="col-md-6" data-background="background">
+  {{! <h2>Login</h2> }}
+  <div id="gridLogin">
+    <div></div>
+
+    <form class="form login-form" data-formCard="card">
+
+      <label data-loginTE="stylingE" for="email-login">Email</label>
+      <input class="form-input" type="text" id="email-login" />
+
+      <label data-loginT="styling" for="password-login">Password</label>
+      <input class="form-input" type="password" id="password-login" />
+
       <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
+        <button class="btn btn-primary loginBtn" type="submit">login</button>
       </div>
     </form>
   </div>
-  
+</body>
 
 <script src="./js/login.js"></script>
