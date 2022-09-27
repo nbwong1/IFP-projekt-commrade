@@ -5,17 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Social dance posts</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="”stylesheet”"
+      href="”https:"
+      maxcdn.bootstrapcdn.com
+      bootstrap
+      4.0.0
+      css
+      bootstrap.min.css”rel="”nofollow”"
+      integrity="”sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW"
+      dAiS6JXm”
+      crossorigin="”anonymous”"
+    />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
   <body>
+    {{! css animation }}
+
+    {{! css animation }}
     <header class="container">
       <nav>
         {{#if logged_in}}
-          <a href="/dashboard" id="dashboard">dashboard</a>
+          <a href="/dashboard" id="dashboard" class="p-4">dashboard</a>
           <a href="/" id="homepage">homepage</a>
           |
           <button class="no-button" id="logout">logout</button>
+          <script src="/js/logout.js"></script>
         {{else}}
           <a href="/login">login</a>
         {{/if}}

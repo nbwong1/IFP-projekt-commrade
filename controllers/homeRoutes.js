@@ -21,7 +21,7 @@ router.get("/", withAuth, async (req, res) => {
     // Pass serialized data and session flag into template
     res.render("homepage", {
       post,
-      logged_in: req.session.logged_in,
+      logged_in: req.session.user_id,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -53,7 +53,7 @@ router.get("/post/:id", withAuth, async (req, res) => {
     // Pass serialized data and session flag into template
     res.render("single-post", {
       post,
-      logged_in: req.session.logged_in,
+      logged_in: req.session.user_id,
     });
   } catch (err) {
     console.log(err);
@@ -63,7 +63,7 @@ router.get("/post/:id", withAuth, async (req, res) => {
 
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
+  if (req.session.user_id) {
     res.redirect("/");
     return;
   }
@@ -73,7 +73,7 @@ router.get("/login", (req, res) => {
 
 router.get("/signup", (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
+  if (req.session.user_id) {
     res.redirect("/");
     return;
   }

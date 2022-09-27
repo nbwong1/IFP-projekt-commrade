@@ -34,7 +34,7 @@ router.get("/", withAuth, async (req, res) => {
 
     const post = postData.map((post) => post.get({ plain: true }));
 
-    res.render("dashboardProfile", { post, loggedIn: true });
+    res.render("dashboardProfile", { post, logged_in: req.session.user_id });
   } catch (err) {
     res.status(500).json(err);
   }
