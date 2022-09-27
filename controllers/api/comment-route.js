@@ -21,9 +21,10 @@ router.post('/:post_id', async (req, res) => {
             user_id: req.body.user_id,
             post_id: req.body.post_id,
             commentary: req.body.commentary,
-
-        });
-    };
+        })
+    } catch (err) {
+    res.status(500).json(err);
+    }
 });
 
 
