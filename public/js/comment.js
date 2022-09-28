@@ -17,6 +17,23 @@ async function handleReply(event) {
   }
 }
 
+//comment delete logic
+async function handleDeleteReply(event) {
+  const response = await fetch(
+    `/api/comments/${event.target.dataset.commentId}`,
+    {
+      method: "DELETE",
+    }
+  );
+  if (response.ok) {
+    window.location.reload();
+  }
+}
+
 document.querySelectorAll(".reply-form").forEach((form) => {
   form.addEventListener("submit", handleReply);
+});
+
+document.querySelectorAll(".delete-reply").forEach((button) => {
+  button.addEventListener("click", handleDeleteReply);
 });

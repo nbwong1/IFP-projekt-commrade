@@ -18,4 +18,19 @@ async function formSubmit(event) {
   }
 }
 
-document.getElementById("event-form").addEventListener("submit", formSubmit);
+async function deleteEvent(event) {
+  const response = await fetch(`/api/posts/${event.target.dataset.postId}`, {
+    method: "DELETE",
+  });
+  if (response.ok) {
+    window.location.reload();
+  }
+}
+
+document
+  .querySelectorAll("#event-form")
+  .forEach((form) => form.addEventListener("submit", formSubmit));
+
+document.querySelectorAll(".delete-post").forEach((button) => {
+  button.addEventListener("click", deleteEvent);
+});

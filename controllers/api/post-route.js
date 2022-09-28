@@ -82,15 +82,20 @@ router.put("/:id", async (req, res) => {
 
 // delete routes for posts
 router.delete("/:id", async (req, res) => {
-  Post.destroy({
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then((deletedPost) => {
-      res.json(deletedPost);
-    })
-    .catch((err) => res.status(500).json(err));
+  try {
+    const post = await Post.findByPk(req.params.id);
+    if (!post) {
+      return res.sendStatus(404);
+    }
+    if (post.user_id != req.session.user_id) {
+      return res.sendStatus(403);
+    }
+
+    await post.destroy();
+    res.sendStatus(200);
+  } catch (error) {
+    res.sendStatus(500);
+  }
 });
 // delete based on Date of event
 
