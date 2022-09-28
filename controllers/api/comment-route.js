@@ -15,13 +15,14 @@ router.get("/", async (req, res) => {
 });
 
 // post comment route
-router.post("/:post_id", async (req, res) => {
+router.post("/:post_id", withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
-      user_id: req.body.user_id,
-      post_id: req.body.post_id,
+      user_id: req.session.user_id,
+      post_id: req.params.post_id,
       commentary: req.body.commentary,
     });
+    res.json(newComment);
   } catch (err) {
     res.status(500).json(err);
   }
