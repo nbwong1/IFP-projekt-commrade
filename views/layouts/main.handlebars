@@ -23,7 +23,10 @@
       dAiS6JXm”
       crossorigin="”anonymous”"
     />
-    <link rel="stylesheet" href="/css/style.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+
   </head>
 
   <body>
@@ -32,13 +35,13 @@
     {{! css animation }}
     <header class="container">
       <nav class="navBar">
-        <img src="../../public/images/5678.jpeg" alt="" />
+        <img id="logo" src="/images/5678.jpeg" alt="" />
 
         {{#if logged_in}}
           <a href="/dashboard" id="dashboard" class="p-4">dashboard</a>
           <a href="/" id="homepage">homepage</a>
           |
-          <button class="no-button" id="logout">logout</button>
+          <a class="no-button" id="logout">logout</a>
           <script src="/js/logout.js"></script>
         {{else}}
           <a href="/login">login</a>
