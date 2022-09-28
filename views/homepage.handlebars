@@ -2,19 +2,34 @@
   <ul class="post-list">
     {{#each post}}
 
-      <li class="post-list-item">
-        <div><h2>{{title}}</h2></div>
-        <div>{{content}}</div>
-        <div>{{format_date date_created}}</div>
-        <div><p>{{location}}</p></div>
-        {{#each comments}}
-          <div>{{commentary}}</div>
-        {{/each}}
-        <form class="reply-form" data-post-id="{{id}}">
-          <input name="commentary" />
-          <button>Reply</button>
-        </form>
-      </li>
+    <li class="post-list-item">
+      <div>
+        <h2>{{title}}</h2>
+      </div>
+      <div>
+        <h3>{{content}}</h3>
+      </div>
+      <div>
+        <p>{{format_date date_created}}</p>
+      </div>
+      <div>
+        <h4>{{location}}</h4>
+      </div>
+    </li>
+    <br>
+    <li>
+      {{#each comments}}
+      <div>
+        <p>{{commentary}}</p>
+      </div>
+      {{/each}}
+      <form class="reply-form" data-post-id="{{id}}">
+        <input name="commentary" type="text" />
+        <button>Reply</button>
+      </form>
+    </li>
+    <br>
+    <br>
     {{/each}}
   </ul>
 </div>
