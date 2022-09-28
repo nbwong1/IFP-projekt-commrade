@@ -7,7 +7,16 @@
         <div>{{content}}</div>
         <div>{{format_date date_created}}</div>
         <div><p>{{location}}</p></div>
+        {{#each comments}}
+          <div>{{commentary}}</div>
+        {{/each}}
+        <form class="reply-form" data-post-id="{{id}}">
+          <input name="commentary" />
+          <button>Reply</button>
+        </form>
       </li>
     {{/each}}
   </ul>
 </div>
+
+<script src="/js/comment.js"></script>
