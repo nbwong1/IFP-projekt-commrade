@@ -1,5 +1,3 @@
-// uses `/api/posts`
-
 const router = require("express").Router();
 
 const { Post, Expiration, User } = require("../../models");
@@ -30,11 +28,12 @@ router.get("/:user_id", (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const newPost = await Post.create({
-      user_id: req.body.user_id,
+      user_id: req.session.user_id,
       title: req.body.title,
       content: req.body.content,
       location: req.body.location,
     });
+    res.json(newPost);
   } catch (err) {
     res.status(500).json(err);
   }
