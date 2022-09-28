@@ -2,28 +2,24 @@
   <ul class="post-list">
     {{#each post}}
 
-      <li class="post-list-item postConteiner">
 
-        <div id="postContainer" data-poastCard="card" class="postConteiner">
-          <div>
-            <h2>{{title}}</h2>
-          </div>
-          <div>
-            <h3>{{content}}</h3>
-          </div>
-          <div>
-            <p>{{format_date date_created}}</p>
-          </div>
-          <div>
-            <h4>{{location}}</h4>
-          </div>
+      <li class="post-list-item">
+        <div style="display: flex;">
+          <h2>{{title}}</h2>
+          {{#if isMine}}
+            <button class="delete-post" data-post-id="{{id}}">x</button>
+          {{/if}}
         </div>
-      </li>
-
-      <li>
+        <div>{{content}}</div>
+        <div>{{format_date date_created}}</div>
+        <div><p>{{location}}</p></div>
         {{#each comments}}
           <div>
-            <p>{{commentary}}</p>
+            {{commentary}}-{{username}}
+            {{#if isMine}}
+              <button class="delete-reply" data-comment-id="{{id}}">x</button>
+            {{/if}}
+
           </div>
         {{/each}}
         <form class="reply-form" data-post-id="{{id}}">
@@ -38,3 +34,4 @@
 </div>
 
 <script src="/js/comment.js"></script>
+<script src="/js/event.js"></script>

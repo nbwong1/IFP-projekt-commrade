@@ -14,13 +14,30 @@ router.get("/", withAuth, async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ["commentary"],
+          attributes: ["commentary", "user_id", "id"],
+          include: [
+            {
+              model: User,
+              attributes: ["username"],
+            },
+          ],
         },
       ],
     });
 
     // Serialize data so the template can read it
-    const post = postData.map((post) => post.get({ plain: true }));
+    const post = postData
+      .map((post) => post.get({ plain: true }))
+      .map((post) => ({
+        ...post,
+        comments: post.comments.map((comment) => ({
+          commentary: comment.commentary,
+          username: comment.user.username,
+          isMine: comment.user_id === req.session.user_id,
+          id: comment.id,
+        })),
+        isMine: post.user_id === req.session.user_id,
+      }));
     console.log(post[0].comments);
     // Pass serialized data and session flag into template
     res.render("homepage", {

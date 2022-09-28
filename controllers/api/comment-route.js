@@ -51,16 +51,20 @@ router.put("/:id", async (req, res) => {
 
 // delete comment route
 router.delete("/:id", async (req, res) => {
-  Comment.destroy({
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then((deletedComment) => {
-      res.json(deletedComment);
-    })
+  try {
+    const comment = await Comment.findByPk(req.params.id);
+    if (!comment) {
+      return res.sendStatus(404);
+    }
+    if (comment.user_id != req.session.user_id) {
+      return res.sendStatus(403);
+    }
 
-    .catch((err) => res.status(500).json(err));
+    await comment.destroy();
+    res.sendStatus(200);
+  } catch (error) {
+    res.sendStatus(500);
+  }
 });
 
 module.exports = router;
