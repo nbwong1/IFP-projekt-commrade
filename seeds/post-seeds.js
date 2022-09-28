@@ -3,30 +3,30 @@ const { Post } = require("../models");
 const postData = [
   {
     user_id: 1,
-    title: "Upcoming Bachata social",
+    title: "Upcoming Bachata Social",
     content:
-      "Group x will be holding and event in x location.we home you can come and join us",
-    location: "balboa park",
+      "Group x will be holding and event in x location. We hope you can come and join us",
+    location: "Balboa Park",
   },
   {
     user_id: 2,
-    title: "last minute Merengue",
+    title: "Last Minute Merengue",
     content:
-      "Group Y would love to have you all join our lern the basics of merengue with us ",
-    location: "North park",
+      "Group Y would love to have you all join our learn the basics of merengue with us",
+    location: "North Park",
   },
   {
     user_id: 3,
     title: "Salsa",
     content:
-      "If you are an intermediate salsa dancer you might want to come to out social dance ",
-    location: "UCSD bulding x",
+      "If you are an intermediate salsa dancer you might want to come to our social dance ",
+    location: "UCSD Bulding x",
   },
   {
     user_id: 4,
-    title: "swing",
+    title: "Swing",
     content: "Come and swing it up with Z group this weekend",
-    location: "downtown",
+    location: "Downtown",
   },
 ];
 

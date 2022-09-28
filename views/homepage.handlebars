@@ -1,6 +1,7 @@
-<div class="post-body">
+<div class="post-body" data-backgroundH="backgroundH">
   <ul class="post-list">
     {{#each post}}
+
 
       <li class="post-list-item">
         <div style="display: flex;">
@@ -18,13 +19,16 @@
             {{#if isMine}}
               <button class="delete-reply" data-comment-id="{{id}}">x</button>
             {{/if}}
+
           </div>
         {{/each}}
         <form class="reply-form" data-post-id="{{id}}">
-          <input name="commentary" />
+          <input name="commentary" type="text" />
           <button>Reply</button>
         </form>
+
       </li>
+
     {{/each}}
   </ul>
 </div>

@@ -7,8 +7,9 @@
   --black: #000000;
   --white: #ffffff;
   --red: rgb(199, 33, 33);
-  --darkgrey: rgb(51, 51, 51);
+  --darkgrey: #444444d0;
   --Tblack: #000000d0;
+  --cream: #ca8427d0;
 }
 
 .navBar {
@@ -56,6 +57,7 @@ a:hover::after {
 /*  */
 /*  */
 /*  */
+
 .form {
   display: flex;
   align-items: center;
@@ -69,6 +71,7 @@ a:hover::after {
   margin-bottom: 0.5em;
   color: var(--white);
   margin-top: 0.5em;
+  font-size: 1.5em;
 }
 
 [data-loginTE="stylingE"] {
@@ -76,6 +79,7 @@ a:hover::after {
   margin-bottom: 0.5em;
 
   color: var(--white);
+  font-size: 1.5em;
 }
 
 [data-backgroundL="backgroundL"] {
@@ -90,6 +94,7 @@ a:hover::after {
 /* [data-formCard="card"] {
   background-color: var(--gray);
 } */
+
 #gridLogin {
   margin-top: 2.5em;
   background-color: var(--Tblack);
@@ -102,7 +107,7 @@ a:hover::after {
   align-items: center;
 }
 
-input {
+.inputL {
   font-size: 22px;
   text-align: center;
   padding: 3px;
@@ -124,6 +129,111 @@ input {
   border-color: var(--red);
   border-width: 3px;
 }
+.signupBtn {
+  font-size: 1.3em;
+  margin-top: 0.5em;
+  margin-left: 1.3em;
+}
 /*  */
 /*  */
 /* css for login */
+
+/*  */
+/*  */
+/* css for signup */
+[data-backgroundS="backgroundS"] {
+  background-image: url("https://images.pexels.com/photos/8281156/pexels-photo-8281156.jpeg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 90.1%;
+  background-size: cover;
+  position: absolute;
+  background-attachment: fixed;
+}
+.containerS {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: 1em;
+}
+.wrapperForm {
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  flex-direction: column;
+  margin-left: 5em;
+  margin-bottom: 20vh;
+}
+.containerSG {
+  display: flex;
+  flex-direction: flex-start;
+}
+.signupInput {
+  background: transparent;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: var(--black);
+  padding: 0.5em;
+  margin-left: 0.5em;
+  font-size: 1.5em;
+}
+
+.sText {
+  margin-left: 2em;
+  font-size: 1.7em;
+}
+
+.sTextM {
+  margin-left: 3.5em;
+  font-size: 1.7em;
+}
+
+.sBtn {
+  font-size: 2em;
+  margin-top: 0.5em;
+  margin-left: 1.3em;
+  background: var(--black);
+
+  background: transparent;
+  border: none;
+}
+
+.sBtn {
+  box-shadow: inset 0 0 0 0 var(--red);
+  color: var(--black);
+  margin: 0 -0.25rem;
+  padding: 0 0.25rem;
+  border-radius: 10px;
+  transition: color 0.3s ease-in-out, 0.3s ease-in-out;
+}
+.sBtn:hover {
+  box-shadow: inset 100px 0 0 0 var(--red);
+  color: var(--black);
+  border-radius: 10px;
+}
+/*  */
+/*  */
+/* css for signup */
+
+/*  */
+/*  */
+/* css for Homepage*/
+[data-backgroundH="backgroundH"] {
+  background-image: url("https://i.pinimg.com/736x/a6/d2/e2/a6d2e2fd3bbf1b8c80bf6d64cbd9a83f.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 90.1%;
+  background-size: cover;
+  position: absolute;
+  background-attachment: fixed;
+}
+
+[data-poastCard="card"] {
+  background-color: var(--cream);
+  width: 50em;
+  border-radius: 5px;
+}
+/*  */
+/*  */
+/* css for Homepage*/ ;
