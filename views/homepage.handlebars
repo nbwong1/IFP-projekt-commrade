@@ -6,6 +6,7 @@
         <div style="display: flex;">
           <input type="hidden" id="post-id" value="{{id}}" />
           <h2>{{title}}</h2>
+
           {{#if isMine}}
             <button class="delete-post" data-post-id="{{id}}">x</button>
           {{/if}}
