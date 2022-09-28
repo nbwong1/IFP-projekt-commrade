@@ -7,8 +7,9 @@
   --black: #000000;
   --white: #ffffff;
   --red: rgb(199, 33, 33);
-  --darkgrey: rgb(51, 51, 51);
+  --darkgrey: #444444d0;
   --Tblack: #000000d0;
+  --cream: #ca8427d0;
 }
 
 .navBar {
@@ -227,6 +228,12 @@ a:hover::after {
   position: absolute;
   background-attachment: fixed;
 }
+
+[data-poastCard="card"] {
+  background-color: var(--cream);
+  width: 50em;
+  border-radius: 5px;
+}
 /*  */
 /*  */
-/* css for Homepage*/
+/* css for Homepage*/ ;

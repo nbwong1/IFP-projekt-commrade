@@ -1,36 +1,37 @@
-<div class="post-body">
+<div class="post-body" data-backgroundH="backgroundH">
   <ul class="post-list">
     {{#each post}}
 
+      <li class="post-list-item postConteiner">
 
-    <li class="post-list-item">
-      <div>
-        <h2>{{title}}</h2>
-      </div>
-      <div>
-        <h3>{{content}}</h3>
-      </div>
-      <div>
-        <p>{{format_date date_created}}</p>
-      </div>
-      <div>
-        <h4>{{location}}</h4>
-      </div>
-    </li>
-    <br>
-    <li>
-      {{#each comments}}
-      <div>
-        <p>{{commentary}}</p>
-      </div>
-      {{/each}}
-      <form class="reply-form" data-post-id="{{id}}">
-        <input name="commentary" type="text" />
-        <button>Reply</button>
-      </form>
-    </li>
-    <br>
-    <br>
+        <div id="postContainer" data-poastCard="card" class="postConteiner">
+          <div>
+            <h2>{{title}}</h2>
+          </div>
+          <div>
+            <h3>{{content}}</h3>
+          </div>
+          <div>
+            <p>{{format_date date_created}}</p>
+          </div>
+          <div>
+            <h4>{{location}}</h4>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        {{#each comments}}
+          <div>
+            <p>{{commentary}}</p>
+          </div>
+        {{/each}}
+        <form class="reply-form" data-post-id="{{id}}">
+          <input name="commentary" type="text" />
+          <button>Reply</button>
+        </form>
+
+      </li>
 
     {{/each}}
   </ul>
