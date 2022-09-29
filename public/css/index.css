@@ -391,6 +391,22 @@ li {
   padding-top: 1em;
   margin-top: 1.5em;
 }
+.inputDec {
+  border: 3px solid #555;
+  padding: 5px;
+}
+.center {
+  display: flex;
+  justify-content: space-evenly;
+}
+.intSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 3em;
+  text-decoration: underline rgb(138, 130, 125);
+}
 /*==================================================
   dashboard Contents CSS
   ==================================================*/

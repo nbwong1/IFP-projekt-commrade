@@ -4,11 +4,11 @@
  <div class="post-container ">
 
   <div class="post-content padding">
-<form id="event-form">
-  <input name="title" placeholder="Event Name" />
-  <input name="content" placeholder="Event Description" />
-  <input name="location" placeholder="Location" />
-  <button>Create Event</button>
+<form id="event-form" class="center">
+  <input class="inputDec" name="title" placeholder="Event Name" />
+  <input class="inputDec" name="content" placeholder="Event Description" />
+  <input  class="inputDec"name="location" placeholder="Location" />
+  <button class="inputDec" class="int-post">Create Event</button>
 </form>
 </div>
 </div>
@@ -81,7 +81,8 @@
 </li>
 
 
-<div><h1>Events that interested you</h1></div>
+<div class="intSection"><h1>Events that interested you</h1></div>
+
 {{#if interested}}
    <li>
     {{#each post}}
