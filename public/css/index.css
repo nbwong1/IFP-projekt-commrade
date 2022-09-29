@@ -1,3 +1,7 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Playfair+Display&family=Poppins&family=Roboto&display=swap");
+
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +15,7 @@
   --darkgrey: #444444d0;
   --Tblack: #000000d0;
   --cream: #ca8427d0;
+  --Twhite: #fffbfbd0;
 }
 
 .navBar {
@@ -70,9 +75,9 @@ a:hover::after {
   flex-direction: row;
 }
 
-/*  */
-/*  */
-/*  */
+/*==================================================
+  login Contents CSS
+  ==================================================*/
 
 .form {
   display: flex;
@@ -162,13 +167,13 @@ a:hover::after {
   margin-top: 0.5em;
   margin-left: 1.3em;
 }
-/*  */
-/*  */
-/* css for login */
+/*==================================================
+  login Contents CSS
+  ==================================================*/
 
-/*  */
-/*  */
-/* css for signup */
+/*==================================================
+  signup Contents CSS
+  ==================================================*/
 [data-backgroundS="backgroundS"] {
   background-image: url("https://images.pexels.com/photos/8281156/pexels-photo-8281156.jpeg");
   background-repeat: no-repeat;
@@ -236,17 +241,17 @@ a:hover::after {
   transition: color 0.3s ease-in-out, 0.3s ease-in-out;
 }
 .sBtn:hover {
-  box-shadow: inset 100px 0 0 0 var(--red);
+  box-shadow: inset 150px 0 0 0 var(--red);
   color: var(--black);
   border-radius: 10px;
 }
-/*  */
-/*  */
-/* css for signup */
+/*==================================================
+  signup Contents CSS
+  ==================================================*/
 
-/*  */
-/*  */
-/* css for Homepage*/
+/*==================================================
+  homepage Contents CSS
+  ==================================================*/
 [data-backgroundH="backgroundH"] {
   background-image: url("https://i.pinimg.com/736x/a6/d2/e2/a6d2e2fd3bbf1b8c80bf6d64cbd9a83f.jpg");
   background-repeat: no-repeat;
@@ -259,9 +264,167 @@ a:hover::after {
 
 [data-poastCard="card"] {
   background-color: var(--cream);
-  width: 50em;
+  width: 50vh;
   border-radius: 5px;
 }
+li {
+  list-style: none;
+}
+
+.postCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.justPost {
+  margin-top: 2em;
+  background-color: var(--Twhite);
+  height: 10em;
+  width: 40em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.titlePost {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.topPost {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--darkgrey);
+  height: 40%;
+  width: 100%;
+}
+
+/*==================================================
+  homepage Contents CSS
+  ==================================================*/
+
+/*==================================================
+  Post Contents CSS
+  ==================================================*/
+.postUser {
+  text-decoration: underline black 5px;
+  font-size: 2em;
+}
+.postText {
+  font-size: 2em;
+  margin-left: 1em;
+}
+.post-content {
+  background: #f1f2f2d0;
+  border-radius: 4px;
+  width: 50%;
+  border: 1px solid #f1f2f2d0;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  margin-bottom: 1em;
+}
+.titleName {
+  display: flex;
+  flex-direction: row;
+}
+.postContent {
+  margin-top: 1em;
+  font-size: 1.3em;
+}
+.commentU {
+  margin-top: 0.5em;
+}
+.dBtns {
+  background-color: rgb(172, 19, 19);
+  color: var(--white);
+  border: 3px solid #080808; /* Green */
+  padding: 3px;
+  border-radius: 4px;
+}
+.dBtn {
+  display: flex;
+  flex-direction: flex-end;
+  align-content: flex-end;
+  justify-content: flex-end;
+}
+.int-post {
+  background-color: rgb(12, 12, 12);
+  color: var(--white);
+  border: 3px solid #080808; /* Green */
+  padding: 3px;
+  border-radius: 4px;
+}
+.int-post:hover {
+  border: 3px solid #fa0000; /* Green */
+}
+.post-content .post-container {
+  padding: 20px;
+}
+
+.post-content .post-container .post-detail {
+  margin-left: 65px;
+  position: relative;
+}
+
+.post-content .post-container .post-detail .post-text {
+  line-height: 24px;
+  margin: 0;
+}
+
+.post-content .post-container .post-detail .reaction {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+.post-content .post-container .post-detail .post-comment {
+  display: inline-flex;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.post-content .post-container .post-detail .post-comment img.profile-photo-sm {
+  margin-right: 10px;
+}
+/*==================================================
+  dashboard Contents CSS
+  ==================================================*/
+[data-backgroundD="backgroundD"] {
+  background-image: url("https://static.wixstatic.com/media/a6e26dd0f09a46f1b238e704d8c4e455.jpg/v1/fill/w_1024,h_1024,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/a6e26dd0f09a46f1b238e704d8c4e455.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
+  position: absolute;
+  background-attachment: fixed;
+}
+.padding {
+  padding-bottom: 1em;
+  padding-top: 1em;
+  margin-top: 1.5em;
+}
+.inputDec {
+  border: 3px solid #555;
+  padding: 5px;
+}
+.center {
+  display: flex;
+  justify-content: space-evenly;
+}
+.intSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 3em;
+  text-decoration: underline rgb(138, 130, 125);
+}
+/*==================================================
+  dashboard Contents CSS
+  ==================================================*/
 
 /*  */
 /*  */
@@ -329,3 +492,4 @@ a:hover::after {
     border-width: 3px;
 }
 }
+
