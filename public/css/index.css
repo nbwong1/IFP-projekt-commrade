@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&family=Poppins&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Playfair+Display&family=Poppins&family=Roboto&display=swap");
 
 * {
   margin: 0;
@@ -13,6 +13,7 @@
   --darkgrey: #444444d0;
   --Tblack: #000000d0;
   --cream: #ca8427d0;
+  --Twhite: #fffbfbd0;
 }
 
 .navBar {
@@ -226,7 +227,7 @@ a:hover::after {
   transition: color 0.3s ease-in-out, 0.3s ease-in-out;
 }
 .sBtn:hover {
-  box-shadow: inset 100px 0 0 0 var(--red);
+  box-shadow: inset 150px 0 0 0 var(--red);
   color: var(--black);
   border-radius: 10px;
 }
@@ -249,10 +250,127 @@ a:hover::after {
 
 [data-poastCard="card"] {
   background-color: var(--cream);
-  width: 50em;
+  width: 50vh;
   border-radius: 5px;
 }
+li {
+  list-style: none;
+}
 
+.postCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.justPost {
+  margin-top: 2em;
+  background-color: var(--Twhite);
+  height: 10em;
+  width: 40em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.titlePost {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.topPost {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--darkgrey);
+  height: 40%;
+  width: 100%;
+}
 /*  */
 /*  */
-/* css for Homepage*/ ;
+/* css for Homepage*/
+
+/*==================================================
+  Post Contents CSS
+  ==================================================*/
+.postUser {
+  text-decoration: underline black 5px;
+  font-size: 2em;
+}
+.postText {
+  font-size: 2em;
+  margin-left: 1em;
+}
+.post-content {
+  background: #f1f2f2d0;
+  border-radius: 4px;
+  width: 50%;
+  border: 1px solid #f1f2f2d0;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  margin-bottom: 1em;
+}
+.titleName {
+  display: flex;
+  flex-direction: row;
+}
+.postContent {
+  margin-top: 1em;
+  font-size: 1.3em;
+}
+.commentU {
+  margin-top: 0.5em;
+}
+.dBtns {
+  background-color: rgb(172, 19, 19);
+  color: var(--white);
+  border: 3px solid #080808; /* Green */
+  padding: 3px;
+  border-radius: 4px;
+}
+.dBtn {
+  display: flex;
+  flex-direction: flex-end;
+  align-content: flex-end;
+  justify-content: flex-end;
+}
+.int-post {
+  background-color: rgb(12, 12, 12);
+  color: var(--white);
+  border: 3px solid #080808; /* Green */
+  padding: 3px;
+  border-radius: 4px;
+}
+.int-post:hover {
+  border: 3px solid #fa0000; /* Green */
+}
+.post-content .post-container {
+  padding: 20px;
+}
+
+.post-content .post-container .post-detail {
+  margin-left: 65px;
+  position: relative;
+}
+
+.post-content .post-container .post-detail .post-text {
+  line-height: 24px;
+  margin: 0;
+}
+
+.post-content .post-container .post-detail .reaction {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.post-content .post-container .post-detail .post-comment {
+  display: inline-flex;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.post-content .post-container .post-detail .post-comment img.profile-photo-sm {
+  margin-right: 10px;
+}
