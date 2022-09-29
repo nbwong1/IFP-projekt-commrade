@@ -1,16 +1,19 @@
-const interested = async () => {
-  const postId = document.getElementById("post-id").value;
-  const response = await fetch(`/api/interest/${postId}`, {
-    method: "POST",
-    body: JSON.stringify({ interest: true }),
-    headers: { "Content-Type": "application/json" },
-  });
+const interested = async (event) => {
+  const button = event.target;
+  const response = await fetch(
+    `/api/posts/${button.dataset.postId}/interested`,
+    {
+      method: "POST",
+    }
+  );
 
   if (response.ok) {
-    document.location.replace("/");
+    document.location.reload();
   } else {
     alert(response.statusText);
   }
 };
 
-document.querySelector("#interestedBtn").addEventListener("click", interested);
+document.querySelectorAll(".interested-btn").forEach((button) => {
+  button.addEventListener("click", interested);
+});

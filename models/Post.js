@@ -36,9 +36,6 @@ Post.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    intrested: {
-      type: DataTypes.BOOLEAN,
-    },
   },
   {
     sequelize,

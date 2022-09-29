@@ -2,34 +2,7 @@
   <ul class="post-list">
     {{#each post}}
 
-      <li class="post-list-item">
-        <div style="display: flex;">
-          <input type="hidden" id="post-id" value="{{id}}" />
-          <h2>{{title}}</h2>
-
-          {{#if isMine}}
-            <button class="delete-post" data-post-id="{{id}}">x</button>
-          {{/if}}
-        </div>
-        <div>{{content}}</div>
-        <div>{{format_date date_created}}</div>
-        <div><p>{{location}}</p></div>
-        <div> <button id="interestedBtn">interested</button></div>
-        {{#each comments}}
-          <div>
-            {{commentary}}-{{username}}
-            {{#if isMine}}
-              <button class="delete-reply" data-comment-id="{{id}}">x</button>
-            {{/if}}
-
-          </div>
-        {{/each}}
-        <form class="reply-form" data-post-id="{{id}}">
-          <input name="commentary" type="text" />
-          <button>Reply</button>
-        </form>
-
-      </li>
+      {{>event}}
 
     {{/each}}
   </ul>

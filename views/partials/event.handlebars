@@ -1,0 +1,34 @@
+<li class="post-list-item">
+  <div style="display: flex;">
+    <input type="hidden" id="post-id" value="{{id}}" />
+    <h2><a href="/post/{{id}}">{{title}}</a></h2>
+
+    {{#if isMine}}
+      <button class="delete-post" data-post-id="{{id}}">Delete</button>
+    {{/if}}
+  </div>
+  <div>{{content}}</div>
+  <div>{{format_date date_created}}</div>
+  <div><p>{{location}}</p></div>
+  {{#unless isMine}}
+    <div>
+      <button
+        class="interested-btn"
+        data-post-id="{{id}}"
+      >Interested</button></div>
+  {{/unless}}
+  {{#each comments}}
+    <div>
+      {{commentary}}-{{username}}
+      {{#if isMine}}
+        <button class="delete-reply" data-comment-id="{{id}}">x</button>
+      {{/if}}
+
+    </div>
+  {{/each}}
+  <form class="reply-form" data-post-id="{{id}}">
+    <input name="commentary" type="text" />
+    <button>Reply</button>
+  </form>
+
+</li>
