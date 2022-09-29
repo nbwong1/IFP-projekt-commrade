@@ -26,6 +26,8 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/index.css" />
+    {{!-- <link rel="stylesheet" href="css/bulma.css" /> --}}
+
 
   </head>
 
@@ -34,24 +36,29 @@
 
     {{! css animation }}
     <header class="container">
-      <nav class="navBar">
+      <container>
         <div class="logoDiv">
           <img id="logo" src="/images/5678.jpeg" alt="5-6-7-8-logo" />
-          <h1 class="logoText">5 - 6 - 7 - 8</h1>
+          <h1 class="logoText">5-6-7-8</h1>
         </div>
-
+        <div>
+          <nav class="navBar navBar-i12">
         {{#if logged_in}}
-          <div class="navText">
-            <a href="/dashboard" id="dashboard" class="p-4">dashboard</a>
-            <a href="/" id="homepage">homepage</a>
-            |
-            <a class="no-button" id="logout">logout</a>
+          <div class="navText navText-i12">
+            <container>
+              <a href="/dashboard" id="dashboard" class="p-4">dashboard</a>
+              <a href="/" id="homepage">homepage</a>
+              <a class="no-button" id="logout">logout</a>
+            </container>
+            
           </div>
+      </container>
           <script src="/js/logout.js"></script>
         {{else}}
           <a href="/login">login</a>
         {{/if}}
       </nav>
+        </div>
     </header>
     {{{body}}}
   </body>
