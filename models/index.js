@@ -3,21 +3,22 @@ const Post = require("./Post");
 const Comment = require("./Comment");
 const Interest = require("./Interest");
 
-//wip
 // Post.belongsToMany(User, {
-//   foreignKey: "user_id",
-//   onDelete: "CASCADE",
+//   foreignKey: "post_id",
+//   through: Interest,
+//   as: "interests",
 // });
 
-Post.hasMany(Interest, {
-  foreignKey: "post_id",
-  onDelete: "CASCADE",
+User.belongsToMany(Post, {
+  foreignKey: "user_id",
+  through: Interest,
+  as: "interests",
 });
 
-// User.hasMany(Post, {
-//   foreignKey: "user_id",
-//   onDelete: "CASCADE",
-// });
+User.hasMany(Post, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
 
 // User.hasMany(Comment, {
 //   foreignKey: "user_id",
