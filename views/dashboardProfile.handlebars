@@ -1,9 +1,3 @@
- <section data-backgroundD="backgroundD">
- <ul class="post-list" >
- 
- <div class="post-container ">
-
-  <div class="post-content padding">
 <form id="event-form" class="center">
   <input class="inputDec" name="title" placeholder="Event Name" />
   <input class="inputDec" name="content" placeholder="Event Description" />
@@ -15,151 +9,12 @@
 <li>
     {{#each post}}
 <div class="post-body" >
-  
 
-  <div class="post-content">
+<ul class="post-list">
+  {{#each post}}
 
-    <div class="post-container">
-         <input type="hidden" id="post-id" value="{{id}}" />
-      <div class="titleName">
-        <h1 class="postUser"> User name |</h1>
-         
-          <h1 class="postText">{{title}} |</h1>
-        
-
-
-      </div>
-      <div class="post-detail">
-        <div class="user-info">
-          <h3 class="text-muted">{{format_date date_created}}</h3>
-        </div>
-       
-        <div class="post-text">
-          <p class="postContent">{{content}}</p>
-        </div>
-      <div> <h2>where?</h2></div>
-        {{!-- api stuff here --}}
-      {{!-- api stuff here --}}
-      <div>{{location}}</div>
-        {{!-- api stuff here --}}
-          {{!-- api stuff here --}}
-         <div> <p>-comments-</p></div>
-        {{#each comments}}
-            <div>
-              <div >
-                
-               <h3 class="profile-link commentU">{{username}} |</h3>
-              
-               <h5 >{{commentary}}</h5>
-              </div>
-          
-             
-              {{#if isMine}}
-                <button class="delete-reply dBtns" data-comment-id="{{id}}">  Delete Comment</button>
-              {{/if}}
-
-            </div>
-          {{/each}}
-          
-          <form class="reply-form" data-post-id="{{id}}">
-            <input name="commentary" type="text" />
-            <button class="int-post">Reply</button>
-          </form>
-            <div> <button class="int-post" id="interestedBtn ">Interested</button></div>
-        <div class="line-divider"></div>
-        
-       
-       
-          {{#if isMine}}
-           <div class="dBtn">
-              <button class="delete-post dBtns" data-post-id="{{id}}">Delete Post</button>
-              </div>
-            {{/if}}
-      </div>
-    </div>
-  </div>
-      {{/each}}
-</li>
- {{!-- D CODE --}}
    {{>event}}
- {{!-- D CODE --}}
 
-<div class="intSection"><h1>Events that interested you</h1></div>
-
-
-{{#if interested}}
-   <li>
-    {{#each post}}
-<div class="post-body" >
-  
-
-  <div class="post-content">
-
-    <div class="post-container">
-         <input type="hidden" id="post-id" value="{{id}}" />
-      <div class="titleName">
-        <h1 class="postUser"> User name |</h1>
-         
-          <h1 class="postText">{{title}} |</h1>
-        
-
-      </div>
-      <div class="post-detail">
-        <div class="user-info">
-          <h3 class="text-muted">{{format_date date_created}}</h3>
-        </div>
-       
-        <div class="post-text">
-          <p class="postContent">{{content}}</p>
-        </div>
-      <div> <h2>where?</h2></div>
-        {{!-- api stuff here --}}
-      {{!-- api stuff here --}}
-      <div>{{location}}</div>
-        {{!-- api stuff here --}}
-          {{!-- api stuff here --}}
-         <div> <p>-comments-</p></div>
-        {{#each comments}}
-            <div>
-              <div >
-                
-               <h3 class="profile-link commentU">{{username}} |</h3>
-              
-               <h5 >{{commentary}}</h5>
-              </div>
-          
-             
-              {{#if isMine}}
-                <button class="delete-reply dBtns" data-comment-id="{{id}}">  Delete Comment</button>
-              {{/if}}
-
-            </div>
-          {{/each}}
-          
-          <form class="reply-form" data-post-id="{{id}}">
-            <input name="commentary" type="text" />
-            <button class="int-post">Reply</button>
-          </form>
-            <div> <button class="int-post" id="interestedBtn ">Interested</button></div>
-        <div class="line-divider"></div>
-        
-       
-       
-          {{#if isMine}}
-           <div class="dBtn">
-              <button class="delete-post dBtns" data-post-id="{{id}}">Delete Post</button>
-              </div>
-            {{/if}}
-      </div>
-    </div>
-  </div>
-      {{/each}}
-</li>
-{{/if}}
-
- 
-
- {{!-- D CODE --}}
 <div><h1>Events that interested you</h1></div>
 <ul class="post-list">
   {{#each interests}}
@@ -168,7 +23,6 @@
 
   {{/each}}
 </ul>
- {{!-- D CODE --}}
 
 <script src="/js/event.js"></script>
  </ul> 
