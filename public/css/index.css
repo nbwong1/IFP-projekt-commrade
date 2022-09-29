@@ -73,9 +73,9 @@ a:hover::after {
   justify-content: flex-end;
 }
 
-/*  */
-/*  */
-/*  */
+/*==================================================
+  login Contents CSS
+  ==================================================*/
 
 .form {
   display: flex;
@@ -153,13 +153,13 @@ a:hover::after {
   margin-top: 0.5em;
   margin-left: 1.3em;
 }
-/*  */
-/*  */
-/* css for login */
+/*==================================================
+  login Contents CSS
+  ==================================================*/
 
-/*  */
-/*  */
-/* css for signup */
+/*==================================================
+  signup Contents CSS
+  ==================================================*/
 [data-backgroundS="backgroundS"] {
   background-image: url("https://images.pexels.com/photos/8281156/pexels-photo-8281156.jpeg");
   background-repeat: no-repeat;
@@ -231,13 +231,13 @@ a:hover::after {
   color: var(--black);
   border-radius: 10px;
 }
-/*  */
-/*  */
-/* css for signup */
+/*==================================================
+  signup Contents CSS
+  ==================================================*/
 
-/*  */
-/*  */
-/* css for Homepage*/
+/*==================================================
+  homepage Contents CSS
+  ==================================================*/
 [data-backgroundH="backgroundH"] {
   background-image: url("https://i.pinimg.com/736x/a6/d2/e2/a6d2e2fd3bbf1b8c80bf6d64cbd9a83f.jpg");
   background-repeat: no-repeat;
@@ -285,9 +285,10 @@ li {
   height: 40%;
   width: 100%;
 }
-/*  */
-/*  */
-/* css for Homepage*/
+
+/*==================================================
+  homepage Contents CSS
+  ==================================================*/
 
 /*==================================================
   Post Contents CSS
@@ -374,3 +375,22 @@ li {
 .post-content .post-container .post-detail .post-comment img.profile-photo-sm {
   margin-right: 10px;
 }
+/*==================================================
+  dashboard Contents CSS
+  ==================================================*/
+[data-backgroundD="backgroundD"] {
+  background-image: url("https://static.wixstatic.com/media/a6e26dd0f09a46f1b238e704d8c4e455.jpg/v1/fill/w_1024,h_1024,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/a6e26dd0f09a46f1b238e704d8c4e455.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
+  position: absolute;
+  background-attachment: fixed;
+}
+.padding {
+  padding-bottom: 1em;
+  padding-top: 1em;
+  margin-top: 1.5em;
+}
+/*==================================================
+  dashboard Contents CSS
+  ==================================================*/
