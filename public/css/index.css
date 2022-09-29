@@ -113,7 +113,7 @@ a:hover::after {
 } */
 
 #gridLogin {
-  display:block;
+  display: block;
   margin-top: 2.5em;
   background-color: var(--Tblack);
   padding: 1em;
@@ -151,11 +151,10 @@ a:hover::after {
   padding-left: 1em;
   padding-right: 1em;
   padding-top: 5%;
-  padding-bottom: 5%; 
+  padding-bottom: 5%;
   border-radius: 15px;
   border-color: var(--red);
   border-width: 3px;
-
 }
 .signupBtn {
   font-size: 1.3em;
@@ -265,7 +264,7 @@ a:hover::after {
 
 /*  */
 /*  */
-/* css for Homepage*/ ;
+/* css for Homepage*/
 
 /* iphone 12 pro size */
 @media screen and (max-width: 390px) {
@@ -275,18 +274,18 @@ a:hover::after {
     height: 100%;
   }
   .navText {
-    display: flex; 
+    display: flex;
   }
   .form {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%; 
+    width: 100%;
     background-color: var(--gray);
   }
   .login-form {
-    display:flex;
+    display: flex;
     margin-top: 2.5em;
     background-color: var(--Tblack);
     padding: 1em;
@@ -305,16 +304,16 @@ a:hover::after {
     border-width: 1px;
   }
   #gridLogin {
-  display: block;
-  margin-top: 2.5em;
-  background-color: var(--Tblack);
-  padding: 1em;
-  margin-left: 10%;
-  margin-right: 10%;
-  border-radius: 20px;
-  background-color: var(--gray);;
-  /* when using these, mobile pushes them to left beyond the edge */
-  /* display: grid;
+    display: block;
+    margin-top: 2.5em;
+    background-color: var(--Tblack);
+    padding: 1em;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 20px;
+    background-color: var(--gray);
+    /* when using these, mobile pushes them to left beyond the edge */
+    /* display: grid;
   grid-template-columns: 2fr 1fr 2fr;
   align-items: center; */
   }
@@ -327,5 +326,5 @@ a:hover::after {
     border-radius: 15px;
     border-color: var(--red);
     border-width: 3px;
-}
+  }
 }
