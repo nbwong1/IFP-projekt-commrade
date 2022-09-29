@@ -56,10 +56,7 @@ router.get("/sign-up", (req, res) => {
 router.get("/post/:id", withAuth, async (req, res) => {
   try {
     //do i need req.params.id here?
-    const postData = await Post.findByPk({
-      where: {
-        id: req.session.id,
-      },
+    const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -67,13 +64,12 @@ router.get("/post/:id", withAuth, async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ["username"],
         },
       ],
     });
 
     // Serialize data so the template can read it
-    const post = postData.map((post) => post.get({ plain: true }));
+    const post = postData.get({ plain: true });
 
     // Pass serialized data and session flag into template
     res.render("single-post", {

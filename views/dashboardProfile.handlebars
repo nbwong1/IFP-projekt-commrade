@@ -27,6 +27,7 @@
           <h1 class="postText">{{title}} |</h1>
         
 
+
       </div>
       <div class="post-detail">
         <div class="user-info">
@@ -79,9 +80,12 @@
   </div>
       {{/each}}
 </li>
-
+ {{!-- D CODE --}}
+   {{>event}}
+ {{!-- D CODE --}}
 
 <div class="intSection"><h1>Events that interested you</h1></div>
+
 
 {{#if interested}}
    <li>
@@ -155,6 +159,16 @@
 
  
 
+ {{!-- D CODE --}}
+<div><h1>Events that interested you</h1></div>
+<ul class="post-list">
+  {{#each interests}}
+
+    {{>event}}
+
+  {{/each}}
+</ul>
+ {{!-- D CODE --}}
 
 <script src="/js/event.js"></script>
  </ul> 

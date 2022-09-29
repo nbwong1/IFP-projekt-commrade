@@ -10,8 +10,9 @@ function findLocation(location = "Museum of Contemporary Art Australia") {
   };
 
   service = new google.maps.places.PlacesService(map);
-
+  console.log(request);
   service.findPlaceFromQuery(request, (results, status) => {
+    console.log(results, status);
     if (status === google.maps.places.PlacesServiceStatus.OK && results) {
       for (let i = 0; i < results.length; i++) {
         createMarker(results[i]);
@@ -31,15 +32,10 @@ function initMap() {
     center: sydney,
     zoom: 15,
   });
+  //grabbed from html
+  const location = document.getElementById("location").value;
+  findLocation(location);
 }
-
-const form = document.getElementById("location-form");
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const locationValue = form.location.value;
-  findLocation(locationValue);
-});
 
 function createMarker(place) {
   if (!place.geometry || !place.geometry.location) return;

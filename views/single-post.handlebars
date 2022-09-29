@@ -1,0 +1,5 @@
+{{>event post}}
+<div id="map"></div>
+<input type="hidden" value="{{post.location}}" id="location">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAknXPW05N5MPKT2kdiU3b6jOyPrb_KDCs&libraries=places&callback=initMap" defer></script>
+<script src="/js/places.js"></script>

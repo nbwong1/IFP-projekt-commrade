@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const { Post, Expiration, User } = require("../../models");
+const { Post, Interest, User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 //get route for posts, gets all posts
@@ -98,5 +98,17 @@ router.delete("/:id", async (req, res) => {
   }
 });
 // delete based on Date of event
+
+router.post("/:post_id/interested", async (req, res) => {
+  try {
+    await Interest.create({
+      post_id: req.params.post_id,
+      user_id: req.session.user_id,
+    });
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+});
 
 module.exports = router;
