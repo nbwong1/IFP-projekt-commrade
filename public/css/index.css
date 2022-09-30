@@ -1,6 +1,4 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Playfair+Display&family=Poppins&family=Roboto&display=swap");
-
 
 * {
   margin: 0;
@@ -76,8 +74,8 @@ a:hover::after {
 }
 
 /*==================================================
-  login Contents CSS
-  ==================================================*/
+ login Contents CSS
+ ==================================================*/
 
 .form {
   display: flex;
@@ -114,11 +112,11 @@ a:hover::after {
   background-attachment: fixed;
 }
 /* [data-formCard="card"] {
-  background-color: var(--gray);
+ background-color: var(--gray);
 } */
 
 #gridLogin {
-  display:block;
+  display: block;
   margin-top: 2.5em;
   background-color: var(--Tblack);
   padding: 1em;
@@ -126,8 +124,8 @@ a:hover::after {
   margin-right: 30%;
   border-radius: 20px;
   /* display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
-  align-items: flex-start; */
+ grid-template-columns: 2fr 1fr 2fr;
+ align-items: flex-start; */
 }
 
 .inputL {
@@ -156,11 +154,10 @@ a:hover::after {
   padding-left: 1em;
   padding-right: 1em;
   padding-top: 5%;
-  padding-bottom: 5%; 
+  padding-bottom: 5%;
   border-radius: 15px;
   border-color: var(--red);
   border-width: 3px;
-
 }
 .signupBtn {
   font-size: 1.3em;
@@ -168,12 +165,12 @@ a:hover::after {
   margin-left: 1.3em;
 }
 /*==================================================
-  login Contents CSS
-  ==================================================*/
+ login Contents CSS
+ ==================================================*/
 
 /*==================================================
-  signup Contents CSS
-  ==================================================*/
+ signup Contents CSS
+ ==================================================*/
 [data-backgroundS="backgroundS"] {
   background-image: url("https://images.pexels.com/photos/8281156/pexels-photo-8281156.jpeg");
   background-repeat: no-repeat;
@@ -246,19 +243,18 @@ a:hover::after {
   border-radius: 10px;
 }
 /*==================================================
-  signup Contents CSS
-  ==================================================*/
+ signup Contents CSS
+ ==================================================*/
 
 /*==================================================
-  homepage Contents CSS
-  ==================================================*/
+ homepage Contents CSS
+ ==================================================*/
 [data-backgroundH="backgroundH"] {
   background-image: url("https://i.pinimg.com/736x/a6/d2/e2/a6d2e2fd3bbf1b8c80bf6d64cbd9a83f.jpg");
   background-repeat: no-repeat;
   width: 100%;
-  height: 100%;
   background-size: cover;
-  /* position: absolute; */
+  position: absolute;
   background-attachment: fixed;
 }
 
@@ -301,20 +297,28 @@ li {
 }
 
 /*==================================================
-  homepage Contents CSS
-  ==================================================*/
+ homepage Contents CSS
+ ==================================================*/
 
 /*==================================================
-  Post Contents CSS
-  ==================================================*/
+ Post Contents CSS
+ ==================================================*/
 .postUser {
-  text-decoration: underline black 5px;
-  font-size: 2em;
+  /* text-decoration: underline black 5px; */
+  font-size: 2.4em;
 }
 .postText {
   font-size: 2em;
   margin-left: 1em;
+  color: #000000;
 }
+.forNow {
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .post-content {
   background: #f1f2f2d0;
   border-radius: 4px;
@@ -380,7 +384,6 @@ li {
   top: 0;
 }
 
-
 .post-content .post-container .post-detail .post-comment {
   display: inline-flex;
   margin: 10px auto;
@@ -391,8 +394,8 @@ li {
   margin-right: 10px;
 }
 /*==================================================
-  dashboard Contents CSS
-  ==================================================*/
+ dashboard Contents CSS
+ ==================================================*/
 [data-backgroundD="backgroundD"] {
   background-image: url("https://static.wixstatic.com/media/a6e26dd0f09a46f1b238e704d8c4e455.jpg/v1/fill/w_1024,h_1024,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/a6e26dd0f09a46f1b238e704d8c4e455.jpg");
   background-repeat: no-repeat;
@@ -423,12 +426,12 @@ li {
   text-decoration: underline rgb(138, 130, 125);
 }
 /*==================================================
-  dashboard Contents CSS
-  ==================================================*/
+ dashboard Contents CSS
+ ==================================================*/
 
 /*  */
 /*  */
-/* css for Homepage*/ ;
+/* css for Homepage*/
 
 /* iphone 12 pro size */
 @media screen and (max-width: 390px) {
@@ -438,18 +441,18 @@ li {
     height: 100%;
   }
   .navText {
-    display: flex; 
+    display: flex;
   }
   .form {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%; 
+    width: 100%;
     background-color: var(--gray);
   }
   .login-form {
-    display:flex;
+    display: flex;
     margin-top: 2.5em;
     background-color: var(--Tblack);
     padding: 1em;
@@ -468,18 +471,18 @@ li {
     border-width: 1px;
   }
   #gridLogin {
-  display: block;
-  margin-top: 2.5em;
-  background-color: var(--Tblack);
-  padding: 1em;
-  margin-left: 10%;
-  margin-right: 10%;
-  border-radius: 20px;
-  background-color: var(--gray);;
-  /* when using these, mobile pushes them to left beyond the edge */
-  /* display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
-  align-items: center; */
+    display: block;
+    margin-top: 2.5em;
+    background-color: var(--Tblack);
+    padding: 1em;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 20px;
+    background-color: var(--gray);
+    /* when using these, mobile pushes them to left beyond the edge */
+    /* display: grid;
+ grid-template-columns: 2fr 1fr 2fr;
+ align-items: center; */
   }
   .inputL {
     /* font-size: 10px; */
@@ -490,6 +493,5 @@ li {
     border-radius: 15px;
     border-color: var(--red);
     border-width: 3px;
+  }
 }
-}
-

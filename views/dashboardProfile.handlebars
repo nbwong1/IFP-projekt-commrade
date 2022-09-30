@@ -1,29 +1,24 @@
+<section data-backgroundD="backgroundD">
+   
+ <div class="post-content padding">
 <form id="event-form" class="center">
-  <input class="inputDec" name="title" placeholder="Event Name" />
-  <input class="inputDec" name="content" placeholder="Event Description" />
-  <input  class="inputDec"name="location" placeholder="Location" />
-  <button class="inputDec" class="int-post">Create Event</button>
+ <input class="inputDec" name="title" placeholder="Event Name" />
+ <input class="inputDec" name="content" placeholder="Event Description" />
+ <input  class="inputDec"name="location" placeholder="Location" />
+ <button class="inputDec int-post" >Create Event</button>
 </form>
 </div>
-</div>
-<li>
-    {{#each post}}
-<div class="post-body" >
-
+ 
 <ul class="post-list">
   {{#each post}}
-
-   {{>event}}
-
+   {{>dash}}
+  {{/each}}
+</ul>
 <div><h1>Events that interested you</h1></div>
 <ul class="post-list">
   {{#each interests}}
-
-    {{>event}}
-
+    {{>dash}}
   {{/each}}
 </ul>
-
 <script src="/js/event.js"></script>
- </ul> 
- </section>
+</section>
